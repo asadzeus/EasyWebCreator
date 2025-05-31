@@ -51,13 +51,13 @@
                         let newEnvContent = envContent.trim();
                         
                         if(!newEnvContent.includes("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY")){
-                            newEnvContent += `\nNEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=`;
+                            newEnvContent += `\nNEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`;
                         }
                         if(!newEnvContent.includes("STRIPE_SECRET_KEY")){
-                            newEnvContent += `\nSTRIPE_SECRET_KEY=`;
+                            newEnvContent += `\nSTRIPE_SECRET_KEY=${process.env.STRIPE_SECRET_KEY}`;
                         }
                         if(!newEnvContent.includes("NEXT_PUBLIC_SITE_URL")){
-                            newEnvContent += `\nNEXT_PUBLIC_SITE_URL=https://localhost:3000`;
+                            newEnvContent += `\nNEXT_PUBLIC_SITE_URL=${process.env.nNEXT_PUBLIC_SITE_URL}`;
                         }
 
 

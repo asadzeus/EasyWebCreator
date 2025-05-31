@@ -88,13 +88,13 @@ async function createAuthentication(currdir) {
               let envContent = fs.readFileSync(envPath, "utf-8");
               
               if(!envContent.includes("GOOGLE_CLIENT_ID")){
-                envContent += "\n" + `GOOGLE_CLIENT_ID=`;
+                envContent += "\n" + `GOOGLE_CLIENT_ID=${process.env.GOOGLE_CLIENT_ID}`;
               }
               if(!envContent.includes("GOOGLE_CLIENT_SECRET")){
-                envContent += "\n" + `GOOGLE_CLIENT_SECRET=`;
+                envContent += "\n" + `GOOGLE_CLIENT_SECRET=${process.env.GOOGLE_CLIENT_SECRET}`;
               }
               if(!envContent.includes("NEXTAUTH_URL")){
-                envContent += "\n\n" + `NEXTAUTH_URL=http://localhost:3000`;
+                envContent += "\n\n" + `NEXTAUTH_URL=${process.env.NEXTAUTH_URL}`;
               }
               if (!envContent.toString().includes("NEXTAUTH_SECRET")) {
                 try {
