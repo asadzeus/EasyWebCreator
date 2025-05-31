@@ -1,0 +1,40 @@
+{
+    "EasyWeb - Height": {
+      "prefix": "height",
+      "body": [
+        "${1|height: 100px;,height: calc(100vh - 100px);|}",
+      ],
+      "description": "Creates an height style"
+    },
+  
+    "EasyWeb - Width": {
+      "prefix": "width",
+      "body": [
+        "${1|width: 100%;|}",
+      ],
+      "description": "Creates an width style"
+    },
+
+
+    "EasyWeb - Flex": {
+      "prefix": "flex",
+      "body": [
+        "display: flex;",
+        "justify-content: center;",
+        "align-items: center;",
+      ],
+      "description": "Creates an width style"
+    },
+
+    "EasyWeb - Flex Column": {
+      "prefix": "col",
+      "body": [
+        "display: flex;",
+        "flex-direction: column;",
+        "justify-content: center;",
+        "align-items: center;",
+      ],
+      "description": "Creates an width style"
+    },
+
+}

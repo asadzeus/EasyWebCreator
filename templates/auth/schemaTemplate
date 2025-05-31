@@ -1,0 +1,20 @@
+module.exports = () => `
+generator client {
+    provider = "prisma-client-js"
+}
+  
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+  
+model USER {
+    id       Int    @id @default(autoincrement())
+    email    String @unique
+    password String
+    name     String 
+    surname  String 
+    image    String?
+    createdAt DateTime @default(now())
+}
+`;

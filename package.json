@@ -1,0 +1,114 @@
+{
+  "name": "easywebcreator-v2",
+  "displayName": "EasyWebCreator 2.0",
+  "description": "Create web apps easily with Easy Web Creator",
+  "publisher": "vixygames",
+  "version": "2.0.0",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asadzeus"
+  },
+  "icon": "icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:easywebcreator.createapp",
+    "onCommand:easywebcreator.runapp",
+    "onCommand:easywebcreator.createpage",
+    "onCommand:easywebcreator.createcomponent",
+    "onCommand:easywebcreator.createdb",
+    "onCommand:easywebcreator.pushdb",
+    "onCommand:easywebcreator.createapicall",
+    "onCommand:easywebcreator.createauthentication",
+    "onCommand:easywebcreator.createtoasts",
+    "onCommand:easywebcreator.savetemplate",
+    "onCommand:easywebcreator.createtypewriter",
+    "onCommand:easywebcreator.createpayment"
+  ],
+  
+  "main": "./extension.js",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/easywebJsx.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/easywebTailwind.code-snippets"
+      }
+    ],
+    "commands": [
+      {
+        "command": "easywebcreator.createapp",
+        "title": "Create App"
+      },
+      {
+        "command": "easywebcreator.runapp",
+        "title": "Run App"
+      },
+      {
+        "command": "easywebcreator.createpage",
+        "title": "Create Page"
+      },
+      {
+        "command": "easywebcreator.createcomponent",
+        "title": "Create Component"
+      },
+      {
+        "command": "easywebcreator.createdb",
+        "title": "Create Database"
+      },
+      {
+        "command": "easywebcreator.pushdb",
+        "title": "Push Database"
+      },
+      {
+        "command": "easywebcreator.createapicall",
+        "title": "Create Api Call"
+      },
+      {
+        "command": "easywebcreator.createauthentication",
+        "title": "Create Authentication"
+      },
+      {
+        "command": "easywebcreator.createtoasts",
+        "title": "Create Toasts"
+      },
+      {
+        "command": "easywebcreator.savetemplate",
+        "title": "Save Template"
+      },
+      {
+        "command": "easywebcreator.createtypewriter",
+        "title": "Create Type Writer"
+      },
+      {
+        "command": "easywebcreator.createpayment",
+        "title": "Create Payment"
+      }
+      
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "js-yaml": "^4.1.0"
+  }
+}

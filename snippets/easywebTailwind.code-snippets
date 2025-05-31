@@ -1,0 +1,81 @@
+{
+  "EasyWeb - flex": {
+    "prefix": "flex",
+    "body": [
+      "${1|flex justify-center items-center,flex flex-col justify-center items-center|}",
+    ],
+    "description": "Creates flex style",
+  },
+ 
+  "EasyWeb - height": {
+    "prefix": "h-",
+    "body": [
+      "${1|h-[calc(100vh-100px)],h-[100px],h-screen,h-full|}",
+    ],
+    "description": "Creates height style"
+  },
+ 
+  "EasyWeb - rounded": {
+    "prefix": "rounded",
+    "body": [
+      "rounded-",
+    ],
+    "description": "Creates round object"
+  },
+
+  "EasyWeb - border": {
+    "prefix": "border",
+    "body": [
+      "border-",
+    ],
+    "description": "Creates border for object"
+  },
+
+ "EasyWeb - gap": {
+    "prefix": "gap",
+    "body": [
+      "gap-",
+    ],
+    "description": "Creates gaps"
+  },
+
+  "EasyWeb - width": {
+    "prefix": "w-",
+    "body": [
+      "${1|w-full,w-screen|}",
+    ],
+    "description": "Creates width style"
+  },
+
+  "EasyWeb - cursor": {
+    "prefix": "cursor",
+    "body": [
+      "cursor-pointer",
+    ],
+    "description": "Creates cursor style"
+  },
+
+  "EasyWeb - bg": {
+    "prefix": "bg-",
+    "body": [
+      "bg-red-500",
+    ],
+    "description": "Creates bg color"
+  },
+
+  "EasyWeb - hover": {
+    "prefix": "hover:",
+    "body": [
+      "hover:",
+    ],
+    "description": "Creates hover style"
+  },
+
+  "EasyWeb - text": {
+    "prefix": "text-",
+    "body": [
+      "${1|text-white,text-black|}:",
+    ],
+    "description": "Creates text color style"
+  },
+}

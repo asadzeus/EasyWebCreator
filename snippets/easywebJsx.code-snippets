@@ -1,0 +1,30 @@
+{
+  "EasyWeb - Left Right": {
+    "prefix": "left-right",
+    "body": [
+      "<div className='left'>Left</div>",
+      "<div className='right'>Right</div>",
+    ],
+    "description": "Creates an left-right div"
+  },
+  "EasyWeb - Up Down": {
+    "prefix": "up-down",
+    "body": [
+      "<div className='up'>Up</div>",
+      "<div className='down'>Down</div>",
+    ],
+    "description": "Creates an height style"
+  },
+ 
+  "EasyWeb - Page Title": {
+    "prefix": "page-title",
+    "body": [
+      "<title>title</title>",
+    ],
+    "description": "Creates page title"
+  
+  }
+
+
+
+}

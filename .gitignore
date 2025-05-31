@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# VS Code Extension test artifacts
+.vscode-test/
+
+# VS Code workspace settings (optional)
+.vscode/
+
+# VSIX package files
+*.vsix
+
+# Logs and temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+.hg
