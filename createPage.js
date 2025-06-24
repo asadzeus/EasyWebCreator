@@ -44,6 +44,14 @@ async function createPage(currdir, context){
         vscode.window.showErrorMessage("Page name is required!");
         return;
     }
+
+    let folders;
+    let lastfolder;
+    
+    if(pageName.includes("/")){
+        folders = pageName.split("/");
+        lastfolder = folders[folders.length - 1]
+    }
     
     //pageName = pageName.toLowerCase();
     pagepath = path.join(currdir, "app", pageName);
@@ -55,7 +63,7 @@ async function createPage(currdir, context){
 
         if (templateChoice === 'Create Basic Page') {
             fs.mkdirSync(pagepath, { recursive: true });
-            fs.writeFileSync(jxsfilepath, pageTemplate(pageName));
+            fs.writeFileSync(jxsfilepath, pageTemplate(lastfolder));
         }
         else if (templateChoice === 'Create Page from Template') {
             const template = await getTemplate(context);

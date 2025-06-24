@@ -74,7 +74,7 @@
   "EasyWeb - text": {
     "prefix": "text-",
     "body": [
-      "${1|text-white,text-black|}:",
+      "${1|text-white,text-black|}",
     ],
     "description": "Creates text color style"
   },
