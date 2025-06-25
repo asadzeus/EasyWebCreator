@@ -52,6 +52,9 @@ async function createPage(currdir, context){
         folders = pageName.split("/");
         lastfolder = folders[folders.length - 1]
     }
+    else{
+        lastfolder = pageName;
+    }
     
     //pageName = pageName.toLowerCase();
     pagepath = path.join(currdir, "app", pageName);

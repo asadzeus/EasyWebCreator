@@ -27,7 +27,8 @@
     "onCommand:easywebcreator.createtoasts",
     "onCommand:easywebcreator.savetemplate",
     "onCommand:easywebcreator.createtypewriter",
-    "onCommand:easywebcreator.createpayment"
+    "onCommand:easywebcreator.createpayment",
+    "onCommand:easywebcreator.createmap"
   ],
   
   "main": "./extension.js",
@@ -90,6 +91,10 @@
       {
         "command": "easywebcreator.createpayment",
         "title": "Create Payment"
+      },
+      {
+        "command": "easywebcreator.createmap",
+        "title": "Create Map"
       }
       
     ]

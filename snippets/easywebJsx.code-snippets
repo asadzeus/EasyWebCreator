@@ -23,8 +23,15 @@
     ],
     "description": "Creates page title"
   
-  }
+  },
 
+  "EasyWeb - Map": {
+    "prefix": "map",
+    "body": [
+      "<Map position={[39.925018, 32.836956]} zoom={13} style=\"w-[400px] h-[400px] rounded-xl\" />"
+    ],
+    "description": "Inserts a React Leaflet map component"
+  }
 
 
 }

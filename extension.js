@@ -13,6 +13,7 @@ const {createToasts} = require("./createToasts");
 const {saveTemplate} = require("./saveTemplate");
 const {createTypeWriter} = require("./createTypeWriter");
 const {createPayment} = require("./createPayment");
+const {createMap} = require("./createMap");
 
 const currdir = vscode.workspace.workspaceFolders[0].uri.fsPath;
 
@@ -73,6 +74,10 @@ function activate(context) {
 		createPayment(currdir);
 	})
 
+	const createmap = vscode.commands.registerCommand("easywebcreator.createmap", async function(){
+		createMap(currdir);
+	})
+
 	context.subscriptions.push(createapp);
 	context.subscriptions.push(runapp);
 	context.subscriptions.push(createpage);
@@ -85,6 +90,7 @@ function activate(context) {
 	context.subscriptions.push(savetemplate);
 	context.subscriptions.push(createtypewriter);
 	context.subscriptions.push(createpayment);
+	context.subscriptions.push(createmap);
 }
 
 function deactivate() {}
