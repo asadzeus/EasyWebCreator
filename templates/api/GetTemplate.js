@@ -1,14 +1,11 @@
-module.exports = () => `
-
-import { PrismaClient } from "@prisma/client";
+module.exports = () => `import { prisma } from "@/prisma/myclient";
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
     
-    const prima = new PrismaClient();
 
     try{
-        const item = await prima.table.findMany();
+        const item = await prisma.table.findMany();
         return NextResponse.json(item);
     }
     catch(error){

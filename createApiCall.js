@@ -21,10 +21,10 @@ async function createApiCall(currdir) {
 
         let apiTemplate = "";
         if(methodName == "GET"){
-            apiTemplate = require('./templates/apiGetTemplate');
+            apiTemplate = require('./templates/api/GetTemplate');
         }
         else if(methodName == "POST"){
-            apiTemplate = require('./templates/apiPostTemplate');
+            apiTemplate = require('./templates/api/PostTemplate');
         }
 
         fs.mkdirSync(apiFolder, { recursive: true });

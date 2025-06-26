@@ -31,7 +31,27 @@
       "<Map position={[39.925018, 32.836956]} zoom={13} style=\"w-[400px] h-[400px] rounded-xl\" />"
     ],
     "description": "Inserts a React Leaflet map component"
-  }
+  },
+
+  "EasyWeb - UseEffect": {
+    "prefix": "useEffect",
+    "body": [
+      "useEffect(()=>{",
+      " ",
+      "},[]);"
+    ],
+    "description": "Inserts a useEffect hook"
+  },
+
+   "EasyWeb - UseState": {
+    "prefix": "useState",
+    "body": [
+      "const [item, setItem] = useState();"
+    ],
+    "description": "Inserts a useState hook"
+  },
+
+
 
 
 }

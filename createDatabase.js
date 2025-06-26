@@ -7,12 +7,13 @@ const execPromise = util.promisify(exec);
 const {IsInstalled} = require("./checkInstallation")
 
 const schemaTemplate = require("./templates/auth/schemaTemplate");
+const myclientTemplate = require("./templates/auth/myclientTemplate");
 
 
 async function createDatabase(currdir) {
-    const DbUserName = await vscode.window.showInputBox({ placeHolder: "Enter DB user name: " });
+    /*const DbUserName = await vscode.window.showInputBox({ placeHolder: "Enter DB user name: " });
     const DbPassword = await vscode.window.showInputBox({ placeHolder: "Enter DB password: " });
-    const DbName = await vscode.window.showInputBox({ placeHolder: "Enter Database name: " });
+    const DbName = await vscode.window.showInputBox({ placeHolder: "Enter Database name: " });*/
 
     return await vscode.window.withProgress({
         location: vscode.ProgressLocation.Notification,
@@ -38,8 +39,11 @@ async function createDatabase(currdir) {
             { message: "Initializing prisma...", action: async () => {
                 const schemaDir = path.join(currdir, "prisma");
                 const schemaPath = path.join(currdir, "prisma", "schema.prisma");
+                const myclientPath = path.join(currdir, "prisma", "myclient.js");
+
                 fs.mkdirSync(schemaDir, {recursive: true});
                 fs.writeFileSync(schemaPath, schemaTemplate());
+                fs.writeFileSync(myclientPath, myclientTemplate());
             } },
             
             {message: "Writing .env file...", action: async () => {
@@ -49,12 +53,19 @@ async function createDatabase(currdir) {
                 }
                 let envContent = fs.readFileSync(envPath, "utf-8");
                 const dbUrlRegex = /DATABASE_URL([\s\S]*)"/g;
+                const directUrlRegex = /DIRECT_URL([\s\S]*)"/g;
         
-                const dbUrl = `mysql://${DbUserName}:${DbPassword}@localhost:3306/${DbName}`;
+                //const dbUrl = `mysql://${DbUserName}:${DbPassword}@localhost:3306/${DbName}`;
+                
                 if (envContent.search("DATABASE_URL") === -1) {
-                    envContent += `\nDATABASE_URL="${dbUrl}"`;
+                    envContent += `\nDATABASE_URL=""`;
                 } else {
-                    envContent = envContent.replace(dbUrlRegex, `DATABASE_URL="${dbUrl}"`);
+                    envContent = envContent.replace(dbUrlRegex, `DATABASE_URL=""`);
+                }
+                if (envContent.search("DIRECT_URL") === -1) {
+                    envContent += `\DIRECT_URL=""`;
+                } else {
+                    envContent = envContent.replace(directUrlRegex, `DIRECT_URL=""`);
                 }
         
                 fs.writeFileSync(envPath, envContent);}
