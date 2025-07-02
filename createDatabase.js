@@ -52,21 +52,12 @@ async function createDatabase(currdir) {
                     fs.writeFileSync(envPath, "");
                 }
                 let envContent = fs.readFileSync(envPath, "utf-8");
-                const dbUrlRegex = /DATABASE_URL([\s\S]*)"/g;
-                const directUrlRegex = /DIRECT_URL([\s\S]*)"/g;
+                //const dbUrlRegex = /DATABASE_URL([\s\S]*)"/g;
         
-                //const dbUrl = `mysql://${DbUserName}:${DbPassword}@localhost:3306/${DbName}`;
                 
-                if (envContent.search("DATABASE_URL") === -1) {
+                if (!envContent.includes("DATABASE_URL")) {
                     envContent += `\nDATABASE_URL=""`;
-                } else {
-                    envContent = envContent.replace(dbUrlRegex, `DATABASE_URL=""`);
-                }
-                if (envContent.search("DIRECT_URL") === -1) {
-                    envContent += `\DIRECT_URL=""`;
-                } else {
-                    envContent = envContent.replace(directUrlRegex, `DIRECT_URL=""`);
-                }
+                } 
         
                 fs.writeFileSync(envPath, envContent);}
             },

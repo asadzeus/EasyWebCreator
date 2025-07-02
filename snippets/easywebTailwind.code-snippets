@@ -86,4 +86,12 @@
     ],
     "description": "Creates transition"
   },
+
+  "EasyWeb - resize": {
+    "prefix": "resize",
+    "body": [
+      "resize-none",
+    ],
+    "description": "Creates resize style for textarea"
+  },
 }
